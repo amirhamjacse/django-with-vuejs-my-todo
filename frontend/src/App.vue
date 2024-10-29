@@ -1,3 +1,5 @@
+
+
 <template>
   <div class="dashboard">
     <!-- Sidebar -->
@@ -161,3 +163,38 @@ export default {
   }
 }
 </style>
+
+
+
+
+<!-- <script>
+import axios from 'axios';
+
+export default {
+  name: 'AboutPage',
+  data() {
+    return {
+      teamMembers: [], 
+      apiError: null 
+    };
+  },
+  created() {
+    // Fetch team members data from an API endpoint
+    this.fetchTeamMembers();
+  },
+  methods: {
+    async fetchTeamMembers() {
+      try {
+        const response = await axios.get('https://api.example.com/team');
+        this.teamMembers = response.data;
+      } catch (error) {
+        this.apiError = 'Failed to load team members. Please try again later.';
+        console.error(error);
+      }
+    },
+    showTeamMember(member) {
+      alert(`Name: ${member.name}, Role: ${member.role}`);
+    }
+  }
+};
+</script> -->
