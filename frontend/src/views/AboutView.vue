@@ -1,20 +1,45 @@
 <template>
-  <div class="about">
-    <header class="about-header">
-      <h1>About Us</h1>
-      <p>Learn more about our team and mission.</p>
-    </header>
-
-    <section class="about-content">
-      <article v-for="member in teamMembers" :key="member.id" @click="showTeamMember(member)">
-        <h2>{{ member.name }}</h2>
-        <p>{{ member.role }}</p>
-      </article>
-    </section>
-
-    <footer class="about-footer">
-      <p>Contact us at <a href="mailto:info@company.com">info@company.com</a></p>
-    </footer>
+  <div class="card">
+    <!-- <img :src="image" alt="Card Image" /> -->
+    <div class="card-content">
+      <h2 class="card-title">{{ title }}</h2>
+      <p class="card-description">{{ description }}</p>
+      <a :href="link" class="card-btn">{{ buttonText }} Button</a>
+    </div>
+  </div>
+  <div class="card">
+    <!-- <img :src="image" alt="Card Image" /> -->
+    <div class="card-content">
+      <h2 class="card-title">{{ title }}</h2>
+      <p class="card-description">{{ description }}</p>
+      <a :href="link" class="card-btn">{{ buttonText }} Button</a>
+    </div>
+  </div>
+  <div class="card">
+    <!-- <img :src="image" alt="Card Image" /> -->
+    <div class="card-content">
+      <h2 class="card-title">{{ title }}</h2>
+      <p class="card-description">{{ description }}</p>
+      <a :href="link" class="card-btn">{{ buttonText }} Button</a>
+    </div>
+  </div>
+  <div class="card">
+    <!-- <img :src="image" alt="Card Image" /> -->
+    <div class="card-content">
+      <h2 class="card-title">{{ title }}</h2>
+      <p class="card-description">{{ description }}</p>
+      <a :href="link" class="card-btn">{{ buttonText }} Button</a>
+    </div>
+  </div>
+  <div class="card">
+    <!-- <img :src="image" alt="Card Image" /> -->
+    <div class="card-content">
+      <router-link to="/tasklist">
+      <h2 class="card-title">{{ title }}</h2>
+      <p class="card-description">{{ description }}</p>
+      <a :href="link" class="card-btn">{{ buttonText }} Button</a>
+    </router-link>
+    </div>
   </div>
 </template>
 
@@ -49,57 +74,61 @@ export default {
   }
 };
 </script>
-
 <style scoped>
-.about {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.card {
+  width: 300px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
   padding: 20px;
-  text-align: center;
 }
 
-.about-header h1 {
-  font-size: 2.5rem;
+.card-title {
+  font-size: 1.5em;
   color: #333;
+  margin-bottom: 10px;
 }
 
-.about-content {
-  margin: 20px 0;
+.card-description {
+  font-size: 0.9em;
+  color: #555;
+  margin-bottom: 20px;
 }
 
-.about-content article {
-  margin-bottom: 15px;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.about-content article:hover {
-  transform: scale(1.05);
-}
-
-.about-footer {
-  margin-top: 20px;
-}
-
-.about-footer a {
-  color: #007bff;
+.card-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
   text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 
-/* Responsive Styles */
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .about-content {
-    display: flex;
-    justify-content: space-around;
-  }
-
-  .about-content article {
-    width: 45%;
-  }
+.card-btn:hover {
+  background-color: #45a049;
 }
 </style>
