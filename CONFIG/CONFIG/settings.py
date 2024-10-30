@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-7kk4#(_#3_gf&1^x!2mamk@j9@q@&y21=$e)(s6zb7v#d!%=q=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'drf_yasg',
     'todo',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -50,6 +51,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+        'corsheaders.middleware.CorsMiddleware',  # Ensure this is at the top
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'CONFIG.urls'
@@ -142,3 +146,11 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CORS_ALLOW_ALL_ORIGINS = True
+
+# OR specify allowed origins
+CORS_ALLOWED_ORIGINS = [
+    "http://192.168.2.105:3000",
+    # "https://another-allowed-domain.com",
+]

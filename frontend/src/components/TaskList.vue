@@ -23,7 +23,10 @@
             v-model="task.completed"
             @change="updateTask(task)"
           />
-          <span class="task-text">{{ task.text }}</span>
+          <span class="task-text"> {{ task.title }}</span>
+          <span class="task-text"> {{ task.description }}</span>
+          <span class="task-text"> {{ task.is_completed }}</span>
+          <span class="task-text"> {{ task.due_date }}</span>
           <button class="delete-btn" @click="deleteTask(task.id)">Delete</button>
         </li>
       </ul>
@@ -37,14 +40,15 @@
     data() {
       return {
         newTask: '',
-        tasks: ['hello', 'Yes'],
-        apiUrl: 'https://api.example.com/tasks',
+        tasks: [],
+        apiUrl: 'http://127.0.0.1:8000',
       };
     },
     methods: {
       async fetchTasks() {
         try {
-          const response = await axios.get(this.apiUrl);
+          const response = await axios.get(`${this.apiUrl}/todo/task`);
+        //   axios.get(`${this.apiUrl}/tasks`);
           this.tasks = response.data;
         } catch (error) {
           console.error('Error fetching tasks:', error);
