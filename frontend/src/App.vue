@@ -13,7 +13,6 @@
           <li><router-link to="/users">Users</router-link></li>
           <li><router-link to="/settings">Settings</router-link></li>
           <li><router-link to="/about">About</router-link></li>
-          
         </ul>
       </nav>
     </aside>
@@ -36,7 +35,7 @@
 
 <script>
 export default {
-  name: 'App',
+  name: 'app',
   methods: {
     logout() {
       // Replace this with actual logout logic
