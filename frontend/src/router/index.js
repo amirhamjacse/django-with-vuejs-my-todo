@@ -30,11 +30,11 @@ const router = createRouter({
       name: 'newcomp',
       component: () => import('../views/NewCompotant.vue')
     },
-  {
-    path: '/newcomp',
-    name: 'newc',
-    component: () => import('../views/OneComp.vue')
-  },
+    {
+      path: '/newcomp',
+      name: 'newc',
+      component: () => import('../views/OneComp.vue')
+    },
   ]
 })
 

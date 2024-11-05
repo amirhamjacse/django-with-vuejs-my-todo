@@ -1,7 +1,7 @@
 <template>
     <div>
         <h1>Testing a componant for me</h1>
-        <h2>
+        <h2 class="text-primary">
             {{ messages }}
         </h2>
 
