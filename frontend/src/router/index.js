@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import AddtoNumber from '@/views/AddtoNumber.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -34,6 +35,11 @@ const router = createRouter({
       path: '/newcomp',
       name: 'newc',
       component: () => import('../views/OneComp.vue')
+    },
+    {
+      path: '/calculation',
+      name: 'calcul',
+      component: AddtoNumber
     },
   ]
 })
