@@ -6,13 +6,12 @@
         <button class="btn btn-success" @click="sumofTwonum()">Get result</button>
         <h3>Result: {{ result }}</h3>
         <button class="btn btn-success" @click="getTaskData()">Call Api</button>
-        <p>{{ task_data.id }}</p>
-        <p>{{ task_data.userId }}</p>
-        <p v-for="task in task_data">
-            <!-- {{ task }} -->
-            <!-- {{ task.userId }}
-            {{ task.id }} -->
-        </p>
+        <p>{{ task_data.title }}</p>
+        <!-- <p>{{ task_data.id }}</p>
+        <p>{{ task_data.userId }}</p> -->
+        <!-- <p v-for="task in task_data">
+            
+        </p> -->
         
 
     </div>
@@ -30,6 +29,9 @@ export default{
             task_data: [],
         }
     },
+    mounted(){
+        this.getTaskData();
+    },
     methods:{
         sumofTwonum(){
             this.first_number = parseInt(this.first_number)
@@ -41,7 +43,7 @@ export default{
             const response = await axios.get('https://jsonplaceholder.typicode.com/todos/1');
             this.task_data = response.data;
             console.log(response.data);
-        }
+        },
 
     }
 }
